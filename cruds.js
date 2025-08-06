@@ -213,6 +213,28 @@ for (let ww = 0; ww < datapro.length; ww++) {
 }document.getElementById("tbody").innerHTML = table;}  
 //clear search
 //scrollBy(100,300)//
+
+
+// إظهار الزر فقط عند النزول لأكثر من 600 بكسل
 let scroll = document.getElementById('scroll');
-window.onscroll = function() {if (scrollY >= 600) {scroll.style.display = 'block';} else {scroll.style.display = 'none';}};
-scroll.onclick =function (){window.scroll({left: 0 ,top:0, behavior: "smooth"})}
+
+// نخلي الزر يختفي أول ما الصفحة تفتح، مهما كان مكانها
+scroll.style.display = 'none';
+
+// أول مرة المستخدم يعمل Scroll نتحقق
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= 600) {
+    scroll.style.display = 'block';
+  } else {
+    scroll.style.display = 'none';
+  }
+});
+
+// لما يضغط على الزر يرجع لأعلى الصفحة
+scroll.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+};
