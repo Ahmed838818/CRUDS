@@ -1,0 +1,97 @@
+* {margin: 0;padding: 0;  box-sizing: border-box;}
+body{ background-color: #222;color: #FFF;font-family: system-ui;color:#fff;}
+.CRUDS{width: 80%;margin: auto;}
+.head{text-align: center;text-transform: uppercase;margin: 10px 0;}
+input{margin: 4px 0;width: 100%;height: 40px;outline: none;border: none;background-color: #111;border-radius: 5px;padding:4px;color: #fff;text-transform:capitalize;}
+input:focus{background-color: #000;transform: scale(1.1);}
+.price input{width: 20%;}
+#total{background-color: #a00d02;padding: 5px 2px;border-radius: 5px;}
+#total::before{content: "Total: ";}
+button{width: 100%;height: 32px; cursor: pointer;background-color: #390053;border-radius: 20px;border: none;outline: none;color: #fff;transition: 0.5s;margin: 3px 0;padding: 5px;}
+button:hover{background-color: #51025f;letter-spacing: 1px;display: fl;}
+.btnsearch{display: flex;justify-content: space-between;}
+.btnsearch button{width: 45%;}
+#table{ width: 100%;margin: 10px;text-align: center;}
+th{text-transform: uppercase;}
+th , td {padding: 6px 0; }
+
+#scroll {
+border: none;width: 30px;height: 30px;border-radius: 90px;cursor: pointer;position: fixed;bottom: 10px;right: 10px;}
+/* زر التبديل */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-label .slider {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+#mode-toggle:checked + .toggle-label {
+  background: #21d07a;
+  box-shadow: 0 0 10px #21d07a;
+}
+
+#mode-toggle:checked + .toggle-label .slider {
+  transform: translateX(30px);
+}
+
+/* الوضع الفاتح */
+body:has(#mode-toggle:checked) {
+  background-color: #f2f2f2 !important; /* الخلفية */
+  color: #000 !important;            /* الخط */
+}
+small:has(#mode-toggle:checked) {
+  color: #fff !important;               /* لون الخط */
+}
+/* input */
+body:has(#mode-toggle:checked) input,
+body:has(#mode-toggle:checked) textarea,
+body:has(#mode-toggle:checked) select {
+  background-color: #e0e0e0 !important;
+  color: #000 !important;
+  border: 1px solid #aaa !important;
+}
+
+
+/* تحويل اللون الموف إلى أزرق */
+body:has(#mode-toggle:checked) .purple,
+body:has(#mode-toggle:checked) .btn-purple,
+body:has(#mode-toggle:checked) [style*="#800080"],
+body:has(#mode-toggle:checked) [style*="purple"] {
+  background-color: #4a90ff !important;
+  color: white !important;
+}
+#deleteall {
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+
+
+
